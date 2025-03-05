@@ -1,0 +1,20 @@
+{
+  "name": "fathers-restaurant",
+  "version": "1.0.0",
+  "description": "Fathers Restaurant Website - Korean Restaurant in Frankfurt",
+  "main": "server.js",
+  "scripts": {
+    "start": "http-server -p 3000",
+    "dev": "http-server -p 3000"
+  },
+  "keywords": [
+    "restaurant",
+    "korean-food",
+    "frankfurt"
+  ],
+  "author": "Fathers Restaurant",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
