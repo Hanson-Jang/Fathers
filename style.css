@@ -1,4 +1,4 @@
-/* Modern and Trendy Design Styles */
+/* Critical CSS */
 :root[data-theme="light"] {
     --primary-color: #1a1a1a;
     --accent-color: #e63946;
@@ -21,14 +21,13 @@
     --card-bg: #1e1e1e;
 }
 
-/* 전역 리셋 */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 기본 스타일 */
 body {
     font-family: 'Noto Sans KR', sans-serif; /* 한글 지원 폰트 */
     line-height: 1.6;
@@ -37,7 +36,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 컨테이너 스타일 */
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -59,7 +58,7 @@ body {
     color: var(--accent-color);
 }
 
-/* 헤더와 네비게이션 */
+/* Header and Navigation */
 header {
     position: fixed;
     width: 100%;
@@ -68,8 +67,7 @@ header {
     background: var(--header-bg);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
+    }
 
 .logo {
     display: flex;
@@ -260,60 +258,7 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: var(--header-bg);
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 0;
-        transition: 0.3s ease-in-out;
-        backdrop-filter: blur(10px);
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 1.5rem 0;
-    }
-
-    .header-right {
-        gap: 1rem;
-    }
-
-    .social-links {
-        display: none;
-    }
-
-    .lang-switcher {
-        margin-left: auto;
-    }
-
-    .lang-switcher button {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .logo-text h1 {
-        font-size: 1.2rem;
-    }
-
-    .logo-text p {
-        font-size: 0.8rem;
-    }
-
-    nav.container {
-        padding: 0.5rem 1rem;
-    }
+    // ... existing code ...
 }
 
 /* Smooth Scrolling */
@@ -473,21 +418,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-
-    section {
-        padding: 4rem 0;
-    }
+    // ... existing code ...
 }
 
 /* Smooth Scrolling */

@@ -20,8 +20,10 @@
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" href="style.css">                                               <!-- 커스텀 스타일시트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">  <!-- 구글 폰트 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">          <!-- Font Awesome 아이콘 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- 자바스크립트 -->
     <script src="translations.js"></script>  <!-- 다국어 지원 스크립트 -->
@@ -74,7 +76,7 @@
         <nav class="container">
             <!-- 로고 및 브랜드명 -->
             <div class="logo">
-                <img src="Logo_Fathers.jpeg" alt="파더스 레스토랑 로고">
+                <img src="Logo_Fathers.jpeg" alt="파더스 레스토랑 로고" loading="lazy" width="50" height="50">
                 <div class="logo-text">
                     <h1>파더스 한식당</h1>
                     <p>프랑크푸르트 정통 한식의 미학</p>
