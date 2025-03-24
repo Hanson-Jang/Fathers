@@ -12,12 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- 자바스크립트 -->
     <script src="translations.js"></script>
 </head>
 <body>
-    <header>
+    <header class="header-transparent">
         <nav class="container">
             <!-- 로고 및 브랜드명 -->
             <div class="logo">
@@ -32,7 +33,7 @@
             <ul class="nav-links">
                 <li><a href="index.html#home" data-lang="nav.home">홈</a></li>
                 <li><a href="index.html#about" data-lang="nav.about">소개</a></li>
-                <li><a href="menu.html" data-lang="nav.menu">메뉴</a></li>
+                <li><a href="menu.html" data-lang="nav.menu" class="active">메뉴</a></li>
                 <li><a href="index.html#reservation" data-lang="nav.reservation">예약</a></li>
                 <li><a href="index.html#contact" data-lang="nav.contact">문의</a></li>
             </ul>
@@ -63,170 +64,324 @@
     </header>
 
     <main>
+        <!-- 메뉴 히어로 섹션 -->
+        <section class="menu-hero">
+            <div class="menu-hero-content" data-aos="fade-up">
+                <h1 class="section-title" data-lang="menu.title">파더스의 특별한 메뉴</h1>
+                <p class="menu-subtitle" data-lang="menu.subtitle">정통 한식의 맛과 현대적 감각의 조화</p>
+            </div>
+        </section>
+
         <!-- 메뉴 섹션 -->
-        <section id="menu" class="container">
-            <h2 class="section-title" data-lang="menu.title">점심 메뉴</h2>
-            
+        <section id="menu" class="container menu-section">
             <!-- 메뉴 카테고리 -->
             <div class="menu-categories">
-                <div class="menu-category">
-                    <h3 data-lang="menu.main">메인 메뉴</h3>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.friedChicken">후라이드 치킨</h4>
-                                <span class="allergens">(1, 3)</span>
-                                <span class="price">€15.00</span>
+                <div class="menu-category" data-aos="fade-up">
+                    <h3 data-lang="menu.lunch" class="category-title">점심 • Mittagessen • Lunch</h3>
+                    <div class="menu-grid">
+                        <!-- 후라이드 치킨 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="menu-card-image">
+                                <img src="img/fried-chicken.jpg" alt="후라이드 치킨" loading="lazy">
+                                <div class="menu-card-badge">인기</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.friedChicken"></p>
+                            <div class="menu-card-content">
+                                <h4>1. 후라이드 치킨<br><span class="menu-subtitle">Fried Chicken</span></h4>
+                                <p class="menu-item-description">Frittiertes Hähnchen, dazu Chilisoße<br>Korean style double fried chicken served with chilli sauce</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 3)</span>
+                                    <span class="price">€15.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.yangnyeomChicken">양념 치킨</h4>
-                                <span class="allergens">(1, 4, 5, 8)</span>
-                                <span class="price">€17.00</span>
+                        <!-- 양념 치킨 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="menu-card-image">
+                                <img src="img/yangnyeom-chicken.jpg" alt="양념 치킨" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.yangnyeomChicken"></p>
+                            <div class="menu-card-content">
+                                <h4>2. 양념 치킨<br><span class="menu-subtitle">Yangnyeom Chicken</span></h4>
+                                <p class="menu-item-description">Frittiertes Hähnchen in scharfer Chilisoße<br>Korean style double fried chicken coated with chilli sauce</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 4, 5, 8)</span>
+                                    <span class="price">€17.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.maneulChicken">마늘 치킨</h4>
-                                <span class="allergens">(1, 3)</span>
-                                <span class="price">€16.00</span>
+                        <!-- 마늘 치킨 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="menu-card-image">
+                                <img src="img/garlic-chicken.jpg" alt="마늘 치킨" loading="lazy">
+                                <div class="menu-card-badge">추천</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.maneulChicken"></p>
+                            <div class="menu-card-content">
+                                <h4>3. 마늘 치킨<br><span class="menu-subtitle">Maneul Chicken</span></h4>
+                                <p class="menu-item-description">Frittiertes Hähnchen in Knoblauchsoße<br>Korean style double fried chicken coated with soy garlic sauce</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 3)</span>
+                                    <span class="price">€16.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.ganjangChicken">간장 치킨</h4>
-                                <span class="allergens">(1, 3, 6, 11)</span>
-                                <span class="price">€16.00</span>
+                        <!-- 간장 치킨 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="menu-card-image">
+                                <img src="img/soy-chicken.jpg" alt="간장 치킨" loading="lazy">
+                                <div class="menu-card-badge">달콤한맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.ganjangChicken"></p>
+                            <div class="menu-card-content">
+                                <h4>4. 간장 치킨<br><span class="menu-subtitle">Ganjang Chicken</span></h4>
+                                <p class="menu-item-description">Frittiertes Hähnchen in süßlicher Sojasoße<br>Korean style double fried chicken seasoned with soy sauce</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 3, 6, 11)</span>
+                                    <span class="price">€16.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.paDak">파닭</h4>
-                                <span class="allergens">(1, 3)</span>
-                                <span class="price">€16.00</span>
+                        <!-- 파닭 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="500">
+                            <div class="menu-card-image">
+                                <img src="img/padak.jpg" alt="파닭" loading="lazy">
+                                <div class="menu-card-badge">특별메뉴</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.paDak"></p>
+                            <div class="menu-card-content">
+                                <h4>5. 파닭<br><span class="menu-subtitle">PaDak</span></h4>
+                                <p class="menu-item-description">Frittiertes Hähnchen, dazu Lauchjulienne<br>Korean style double fried chicken served with leek julienne</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 3)</span>
+                                    <span class="price">€16.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sujeDonkkas">수제 돈까스</h4>
-                                <span class="allergens">(1, 3)</span>
-                                <span class="price">€16.00</span>
+                        <!-- 수제 치즈 돈까스 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="700">
+                            <div class="menu-card-image">
+                                <img src="img/cheese-donkatsu.jpg" alt="수제 치즈 돈까스" loading="lazy">
+                                <div class="menu-card-badge">프리미엄</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sujeDonkkas"></p>
+                            <div class="menu-card-content">
+                                <h4>6. 수제 치즈 돈까스<br><span class="menu-subtitle">Suje Cheese Donkkas</span></h4>
+                                <p class="menu-item-description">Hausgemachte Schnitzel aus Schweinefleisch nach koreanischer Art mit Käse, dazu Reis, Gemüse und süßlicher Chili Dip<br>Korean style pork cutlet with cheese served with rice, vegetables and sweet chilli dip</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 3)</span>
+                                    <span class="price">€18.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sujeCheeseDonkkas">수제 치즈 돈까스</h4>
-                                <span class="allergens">(1, 3)</span>
-                                <span class="price">€18.00</span>
+                        <!-- 사골 짬뽕 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="800">
+                            <div class="menu-card-image">
+                                <img src="img/jjamppong.jpg" alt="사골 짬뽕" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sujeCheeseDonkkas"></p>
+                            <div class="menu-card-content">
+                                <h4>7. 사골 짬뽕*<br><span class="menu-subtitle">Sagol Jamppong</span></h4>
+                                <p class="menu-item-description">Scharfe Nudel Suppe mit Meeresfrüchten, Schweinefleischstreifen und frischem Gemüse<br>Spicy noodle soup with seafood, stripes of pork meat and fresh vegetables</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 2, 4, 11, 14)</span>
+                                    <span class="price">€15.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sagolJamppong">사골 짬뽕</h4>
-                                <span class="allergens">(1, 2, 4, 11, 14)</span>
-                                <span class="price">€15.00</span>
+                        <!-- 제육덮밥 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="menu-card-image">
+                                <img src="img/jeyuk.jpg" alt="제육덮밥" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sagolJamppong"></p>
+                            <div class="menu-card-content">
+                                <h4>8. 제육덮밥<br><span class="menu-subtitle">Jeyuk DeopBap</span></h4>
+                                <p class="menu-item-description">Scharf mariniertes Schweinefleisch gebraten mit frischem Gemüse, dazu Reis<br>Spicy marinated pork meat fried with fresh vegetables served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(6, 11)</span>
+                                    <span class="price">€16.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sagolJamppongbap">사골 짬뽕밥</h4>
-                                <span class="allergens">(1, 2, 4, 11, 14)</span>
-                                <span class="price">€15.00</span>
+                        <!-- 오징어덮밥 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1100">
+                            <div class="menu-card-image">
+                                <img src="img/ojingeo.jpg" alt="오징어덮밥" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sagolJamppongbap"></p>
+                            <div class="menu-card-content">
+                                <h4>9. 오징어덮밥<br><span class="menu-subtitle">Ojingeo DeopBap</span></h4>
+                                <p class="menu-item-description">Scharf marinierter Tintenfisch gebraten mit frischem Gemüse, dazu Reis<br>Spicy marinated squid fried with fresh vegetables served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(11, 14)</span>
+                                    <span class="price">€17.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.jeyukDeopBap">제육덮밥</h4>
-                                <span class="allergens">(6, 11)</span>
-                                <span class="price">€16.00</span>
+                        <!-- 불고기 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1200">
+                            <div class="menu-card-image">
+                                <img src="img/bulgogi.jpg" alt="불고기" loading="lazy">
+                                <div class="menu-card-badge">추천</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.jeyukDeopBap"></p>
+                            <div class="menu-card-content">
+                                <h4>10. 불고기<br><span class="menu-subtitle">Bulgogi</span></h4>
+                                <p class="menu-item-description">Rindfleisch mit frischem Gemüse mariniert in einer speziellen koreanischen Sojasoße und gebraten, dazu Reis<br>Beef meat with fresh vegetables marinated in a special Korean soy sauce and fried served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(6, 11)</span>
+                                    <span class="price">€18.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.ojingeoDeopBap">오징어덮밥</h4>
-                                <span class="allergens">(11, 14)</span>
-                                <span class="price">€17.00</span>
+                        <!-- 소고기국밥 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1300">
+                            <div class="menu-card-image">
+                                <img src="img/sogogi-gukbap.jpg" alt="소고기국밥" loading="lazy">
+                                <div class="menu-card-badge">추천</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.ojingeoDeopBap"></p>
+                            <div class="menu-card-content">
+                                <h4>11. 소고기국밥*<br><span class="menu-subtitle">Sogogi Gukbap</span></h4>
+                                <p class="menu-item-description">Scharfe Suppe mit Rindfleisch, dazu Reis<br>Spicy soup with beef meat served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(6)</span>
+                                    <span class="price">€18.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.bulgogi">불고기</h4>
-                                <span class="allergens">(6, 11)</span>
-                                <span class="price">€18.00</span>
+                        <!-- 순대국밥 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1400">
+                            <div class="menu-card-image">
+                                <img src="img/sundae-gukbap.jpg" alt="순대국밥" loading="lazy">
+                                <div class="menu-card-badge">전통</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.bulgogi"></p>
+                            <div class="menu-card-content">
+                                <h4>12. 순대국밥*<br><span class="menu-subtitle">Sundae Gukbap</span></h4>
+                                <p class="menu-item-description">Suppe mit Sundae(eine Art blonde Wurst in der koreanischen Küche, die durch das Dämpfen von Schweinedärmen mit verschiedenen Zutaten hergestellt wird), dazu Reis und Chili Gewürz<br>Soup with Sundae(a type of blood sausage in Korean cuisine made by steaming pig's intestines stuffed with various ingredients) served with rice and chilli spices</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens"></span>
+                                    <span class="price">€17.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sogogiGukbap">소고기국밥</h4>
-                                <span class="allergens">(6)</span>
-                                <span class="price">€18.00</span>
+                        <!-- 뼈해장국 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1500">
+                            <div class="menu-card-image">
+                                <img src="img/ppyeo-haejangguk.jpg" alt="뼈해장국" loading="lazy">
+                                <div class="menu-card-badge">추천</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sogogiGukbap"></p>
+                            <div class="menu-card-content">
+                                <h4>13. 뼈해장국*<br><span class="menu-subtitle">Ppyeo Haejangguk</span></h4>
+                                <p class="menu-item-description">Scharfe Suppe mit Schweinerückgrat, dazu Reis<br>Spicy soup with pork backbone served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(6)</span>
+                                    <span class="price">€17.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.sundaeGukbap">순대국밥</h4>
-                                <span class="price">€17.00</span>
+                        <!-- 삼겹살 김치찌개 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1600">
+                            <div class="menu-card-image">
+                                <img src="img/kimchi-jjigae.jpg" alt="삼겹살 김치찌개" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.sundaeGukbap"></p>
+                            <div class="menu-card-content">
+                                <h4>14. 삼겹살 김치찌개*<br><span class="menu-subtitle">Samgyeopsal Kimchi Jjigae</span></h4>
+                                <p class="menu-item-description">Scharfer Eintopf mit fermentiertem Kimchi und Schweinefleisch, dazu Reis<br>Spicy stew with fermented Kimchi and pork meat served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(6)</span>
+                                    <span class="price">€15.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.ppyeoHaejangguk">뼈해장국</h4>
-                                <span class="allergens">(6)</span>
-                                <span class="price">€17.00</span>
+                        <!-- 사골 짬뽕밥 -->
+                        <div class="menu-card" data-aos="fade-up" data-aos-delay="1700">
+                            <div class="menu-card-image">
+                                <img src="img/jamppongbap.jpg" alt="사골 짬뽕밥" loading="lazy">
+                                <div class="menu-card-badge">매운맛</div>
                             </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.ppyeoHaejangguk"></p>
+                            <div class="menu-card-content">
+                                <h4>15. 사골 짬뽕밥*<br><span class="menu-subtitle">Sagol Jamppongbap</span></h4>
+                                <p class="menu-item-description">Scharfe Suppe mit Meeresfrüchten, Schweine fleischstreifen und frischem Gemüse, dazu Reis<br>Spicy soup with seafood, stripes of pork meat and fresh vegetables served with rice</p>
+                                <div class="menu-card-footer">
+                                    <span class="allergens">(1, 2, 4, 11, 14)</span>
+                                    <span class="price">€15.00</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 data-lang="menu.items.kimchiJjigae">삼겹살 김치찌개</h4>
-                                <span class="allergens">(6)</span>
-                                <span class="price">€15.00</span>
-                            </div>
-                            <p class="menu-item-description" data-lang="menu.descriptions.kimchiJjigae"></p>
+                        <div class="menu-notice" data-aos="fade-up">
+                            <p class="special-note">* 파더스는 정성을 담아 직접 고운 사골 국물만 사용합니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 알레르기 정보 및 주의사항 -->
-            <div class="menu-footer">
-                <p class="allergens-info" data-lang="menu.allergens"></p>
-                <p class="special-note" data-lang="menu.note"></p>
+            <div class="menu-footer" data-aos="fade-up">
+                <div class="allergens-info-card">
+                    <h4><i class="fas fa-exclamation-circle"></i> 알레르기 정보</h4>
+                    <p data-lang="menu.allergens">알레르기 유발 물질 정보를 확인하세요</p>
+                </div>
             </div>
         </section>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // 페이지 로드 최적화
+        document.addEventListener('DOMContentLoaded', () => {
+            // 번역 초기화
+            updateContent();
+            
+            // AOS 초기화 - 성능 최적화
+            AOS.init({
+                duration: 400,
+                offset: 50,
+                once: true,
+                disable: 'mobile',
+                startEvent: 'DOMContentLoaded',
+                throttleDelay: 99
+            });
+
+            // 이미지 지연 로딩 최적화
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.src;
+                });
+            } else {
+                // Fallback for browsers that don't support native lazy loading
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+                document.body.appendChild(script);
+            }
+        });
+    </script>
+</body>
+</html>
+
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // AOS 초기화
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
         // 페이지 로드 시 번역 초기화
         document.addEventListener('DOMContentLoaded', () => {
             updateContent();

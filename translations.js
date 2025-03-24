@@ -235,20 +235,30 @@ function switchLanguage(lang) {
     document.documentElement.lang = lang;
 }
 
+// DOM 요소 캐시
+let translationElements;
+
 // 페이지 내용 업데이트 함수
 function updateContent() {
+    // 첫 실행시에만 DOM 요소를 캐시
+    if (!translationElements) {
+        translationElements = Array.from(document.querySelectorAll('[data-lang]')).map(element => ({
+            element,
+            key: element.getAttribute('data-lang').split('.'),
+            isInput: element.tagName === 'INPUT' || element.tagName === 'TEXTAREA'
+        }));
+    }
+
     const t = translations[currentLang];
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        const keys = key.split('.');
+    translationElements.forEach(({ element, key, isInput }) => {
         let value = t;
-        
-        for (const k of keys) {
+        for (const k of key) {
             value = value?.[k];
+            if (!value) break;
         }
         
         if (value) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            if (isInput) {
                 element.setAttribute('placeholder', value);
             } else {
                 element.textContent = value;
